@@ -1,0 +1,341 @@
+~/commandergenius/project/jni/application/src ~/commandergenius
+make: Entering directory '/home/pulsex/commandergenius/project/jni/application/openttd/build-tools'
+/usr/sbin/cmake -S/home/pulsex/commandergenius/project/jni/application/src/src -B/home/pulsex/commandergenius/project/jni/application/src/build-tools --check-build-system CMakeFiles/Makefile.cmake 0
+/usr/sbin/cmake -E cmake_progress_start /home/pulsex/commandergenius/project/jni/application/src/build-tools/CMakeFiles /home/pulsex/commandergenius/project/jni/application/src/build-tools//CMakeFiles/progress.marks
+make  -f CMakeFiles/Makefile2 all
+make[1]: Entering directory '/home/pulsex/commandergenius/project/jni/application/openttd/build-tools'
+make  -f src/settingsgen/CMakeFiles/settingsgen.dir/build.make src/settingsgen/CMakeFiles/settingsgen.dir/depend
+make  -f src/strgen/CMakeFiles/strgen.dir/build.make src/strgen/CMakeFiles/strgen.dir/depend
+make[2]: Entering directory '/home/pulsex/commandergenius/project/jni/application/openttd/build-tools'
+cd /home/pulsex/commandergenius/project/jni/application/src/build-tools && /usr/sbin/cmake -E cmake_depends "Unix Makefiles" /home/pulsex/commandergenius/project/jni/application/src/src /home/pulsex/commandergenius/project/jni/application/src/src/src/settingsgen /home/pulsex/commandergenius/project/jni/application/src/build-tools /home/pulsex/commandergenius/project/jni/application/src/build-tools/src/settingsgen /home/pulsex/commandergenius/project/jni/application/src/build-tools/src/settingsgen/CMakeFiles/settingsgen.dir/DependInfo.cmake "--color=" settingsgen
+make[2]: Entering directory '/home/pulsex/commandergenius/project/jni/application/openttd/build-tools'
+cd /home/pulsex/commandergenius/project/jni/application/src/build-tools && /usr/sbin/cmake -E cmake_depends "Unix Makefiles" /home/pulsex/commandergenius/project/jni/application/src/src /home/pulsex/commandergenius/project/jni/application/src/src/src/strgen /home/pulsex/commandergenius/project/jni/application/src/build-tools /home/pulsex/commandergenius/project/jni/application/src/build-tools/src/strgen /home/pulsex/commandergenius/project/jni/application/src/build-tools/src/strgen/CMakeFiles/strgen.dir/DependInfo.cmake "--color=" strgen
+make[2]: Leaving directory '/home/pulsex/commandergenius/project/jni/application/openttd/build-tools'
+make[2]: Leaving directory '/home/pulsex/commandergenius/project/jni/application/openttd/build-tools'
+make  -f src/settingsgen/CMakeFiles/settingsgen.dir/build.make src/settingsgen/CMakeFiles/settingsgen.dir/build
+make  -f src/strgen/CMakeFiles/strgen.dir/build.make src/strgen/CMakeFiles/strgen.dir/build
+make[2]: Entering directory '/home/pulsex/commandergenius/project/jni/application/openttd/build-tools'
+make[2]: Nothing to be done for 'src/settingsgen/CMakeFiles/settingsgen.dir/build'.
+make[2]: Leaving directory '/home/pulsex/commandergenius/project/jni/application/openttd/build-tools'
+make[2]: Entering directory '/home/pulsex/commandergenius/project/jni/application/openttd/build-tools'
+make[2]: Nothing to be done for 'src/strgen/CMakeFiles/strgen.dir/build'.
+make[2]: Leaving directory '/home/pulsex/commandergenius/project/jni/application/openttd/build-tools'
+[100%] Built target strgen
+[100%] Built target settingsgen
+make[1]: Leaving directory '/home/pulsex/commandergenius/project/jni/application/openttd/build-tools'
+/usr/sbin/cmake -E cmake_progress_start /home/pulsex/commandergenius/project/jni/application/src/build-tools/CMakeFiles 0
+make: Leaving directory '/home/pulsex/commandergenius/project/jni/application/openttd/build-tools'
+~/commandergenius/project/jni/application/src/data-plat-indp ~/commandergenius/project/jni/application/src
+Version did not change - no need to download data files
+~/commandergenius
+HOST_OS=linux
+HOST_ARCH=x86_64
+HOST_TAG=linux-x86_64
+GNUMAKE=/opt/android-ndk/build/../prebuilt/linux-x86_64/bin/make (NDK prebuilt)
+make: Entering directory '/home/pulsex/commandergenius/project'
+Android NDK: NDK installation path auto-detected: '/opt/android-ndk'
+Android NDK: GNU Make version 4.3 detected
+Android NDK: Host OS was auto-detected: linux
+Android NDK:  Host operating system detected: linux
+Android NDK: HOST_TAG set to linux-x86
+Android NDK: Host tools prebuilt directory: /opt/android-ndk/prebuilt/linux-x86_64/bin
+Android NDK: Host 'echo' tool: echo
+Android NDK: Host 'echo -n' tool: printf %s
+Android NDK: Host 'cmp' tool: cmp
+Android NDK: Found max platform level: 35
+Android NDK:  This NDK supports the following target architectures and ABIS:
+Android NDK:    arm: armeabi-v7a
+Android NDK:    arm64: arm64-v8a
+Android NDK:    riscv64: riscv64
+Android NDK:    x86: x86
+Android NDK:    x86_64: x86_64
+Android NDK:  This NDK supports the following toolchains and target ABIs:
+Android NDK:    aarch64-linux-android-clang:  arm64-v8a
+Android NDK:    arm-linux-androideabi-clang:  armeabi-v7a
+Android NDK:    riscv64-linux-android-clang:  riscv64
+Android NDK:    x86-clang:  x86
+Android NDK:    x86_64-clang:  x86_64
+Android NDK: Found project path: .
+Android NDK: Ouput path for intermediate files: ./obj
+Android NDK: Ouput path for generated library files: ./libs
+Android NDK: Parsing ./jni/Application.mk
+Android NDK: WARNING: APP_PLATFORM android-24 is higher than android:minSdkVersion 1 in jni/../AndroidManifest.xml. NDK binaries will *not* be compatible with devices older than android-24. See https://android.googlesource.com/platform/ndk/+/master/docs/user/common_problems.md for more information.    
+Android NDK:   Defaulted to APP_BUILD_SCRIPT=jni/../jni/Android.mk
+Android NDK: Application 'local' is not debuggable
+Android NDK: Selecting release optimization mode (app is not debuggable)
+Android NDK: Adding import directory: /opt/android-ndk/sources
+Android NDK: Building application 'local' for ABI 'arm64-v8a'
+Android NDK: Using target toolchain 'aarch64-linux-android-clang' for 'arm64-v8a' ABI
+Android NDK: Looking for imported module with tag 'android/cpufeatures'
+Android NDK:   Probing /opt/android-ndk/sources/android/cpufeatures/Android.mk
+Android NDK:     Found in /opt/android-ndk/sources/android/cpufeatures
+Android NDK: [arm64-v8a] Modules to build: sdl-1.2 sdl_native_helpers jpeg png ogg flac vorbis freetype timidity curl expat fontconfig lzma lzo2 icui18n iculx icu-le-hb harfbuzz icudata icuuc crypto ssl
+Android NDK: Building application 'local' for ABI 'armeabi-v7a'
+Android NDK: Using target toolchain 'arm-linux-androideabi-clang' for 'armeabi-v7a' ABI
+Android NDK: Looking for imported module with tag 'android/cpufeatures'
+Android NDK:   Probing /opt/android-ndk/sources/android/cpufeatures/Android.mk
+Android NDK:     Found in /opt/android-ndk/sources/android/cpufeatures
+Android NDK: [armeabi-v7a] Modules to build: sdl-1.2 sdl_native_helpers jpeg png ogg flac vorbis freetype timidity curl expat fontconfig lzma lzo2 icui18n iculx icu-le-hb harfbuzz icudata icuuc crypto ssl
+Android NDK: Building application 'local' for ABI 'x86'
+Android NDK: Using target toolchain 'x86-clang' for 'x86' ABI
+Android NDK: Looking for imported module with tag 'android/cpufeatures'
+Android NDK:   Probing /opt/android-ndk/sources/android/cpufeatures/Android.mk
+Android NDK:     Found in /opt/android-ndk/sources/android/cpufeatures
+Android NDK: [x86] Modules to build: sdl-1.2 sdl_native_helpers jpeg png ogg flac vorbis freetype timidity curl expat fontconfig lzma lzo2 icui18n iculx icu-le-hb harfbuzz icudata icuuc crypto ssl
+Android NDK: Building application 'local' for ABI 'x86_64'
+Android NDK: Using target toolchain 'x86_64-clang' for 'x86_64' ABI
+Android NDK: Looking for imported module with tag 'android/cpufeatures'
+Android NDK:   Probing /opt/android-ndk/sources/android/cpufeatures/Android.mk
+Android NDK:     Found in /opt/android-ndk/sources/android/cpufeatures
+Android NDK: WARNING: Unsupported source file extensions in jni/../jni/sdl2_mixer/external/mpg123-1.25.13/Android.mk for module mpg123    
+Android NDK:   src/libmpg123/icy.h src/libmpg123/icy2utf8.h src/libmpg123/synth.h src/libmpg123/synth_8bit.h src/libmpg123/dither.h    
+Android NDK: [x86_64] Modules to build: sdl-1.2 sdl_native_helpers jpeg png ogg flac vorbis freetype timidity curl expat fontconfig lzma lzo2 icui18n iculx icu-le-hb harfbuzz icudata icuuc crypto ssl
+make: Leaving directory '/home/pulsex/commandergenius/project'
+make: Entering directory '/home/pulsex/commandergenius/project'
+rm -f ./libs/arm64-v8a/* ./libs/armeabi-v7a/* ./libs/x86/* ./libs/x86_64/*
+make: Leaving directory '/home/pulsex/commandergenius/project'
+make: Entering directory '/home/pulsex/commandergenius/project'
+[arm64-v8a] Install libs/arm64-v8a/libc++_shared.so:
+install -p /opt/android-ndk/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/lib/aarch64-linux-android/libc++_shared.so ./libs/arm64-v8a/libc++_shared.so
+make: Leaving directory '/home/pulsex/commandergenius/project'
+make: Entering directory '/home/pulsex/commandergenius/project'
+[armeabi-v7a] Install libs/armeabi-v7a/libc++_shared.so:
+install -p /opt/android-ndk/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/lib/arm-linux-androideabi/libc++_shared.so ./libs/armeabi-v7a/libc++_shared.so
+make: Leaving directory '/home/pulsex/commandergenius/project'
+make: Entering directory '/home/pulsex/commandergenius/project'
+[x86] Install libs/x86/libc++_shared.so:
+install -p /opt/android-ndk/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/lib/i686-linux-android/libc++_shared.so ./libs/x86/libc++_shared.so
+make: Leaving directory '/home/pulsex/commandergenius/project'
+make: Entering directory '/home/pulsex/commandergenius/project'
+[x86_64] Install libs/x86_64/libc++_shared.so:
+install -p /opt/android-ndk/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/lib/x86_64-linux-android/libc++_shared.so ./libs/x86_64/libc++_shared.so
+make: Leaving directory '/home/pulsex/commandergenius/project'
+make: Entering directory '/home/pulsex/commandergenius/project'
+[arm64-v8a] Install        : libsdl-1.2.so => libs/arm64-v8a/libsdl-1.2.so
+install -p ./obj/local/arm64-v8a/libsdl-1.2.so ./libs/arm64-v8a/libsdl-1.2.so
+make: Leaving directory '/home/pulsex/commandergenius/project'
+make: Entering directory '/home/pulsex/commandergenius/project'
+[arm64-v8a] Install        : libsdl_native_helpers.so => libs/arm64-v8a/libsdl_native_helpers.so
+install -p ./obj/local/arm64-v8a/libsdl_native_helpers.so ./libs/arm64-v8a/libsdl_native_helpers.so
+make: Leaving directory '/home/pulsex/commandergenius/project'
+make: Entering directory '/home/pulsex/commandergenius/project'
+[arm64-v8a] Install        : libtimidity.so => libs/arm64-v8a/libtimidity.so
+install -p ./obj/local/arm64-v8a/libtimidity.so ./libs/arm64-v8a/libtimidity.so
+make: Leaving directory '/home/pulsex/commandergenius/project'
+make: Entering directory '/home/pulsex/commandergenius/project'
+[arm64-v8a] Install        : libcurl-sdl.so => libs/arm64-v8a/libcurl-sdl.so
+install -p ./obj/local/arm64-v8a/libcurl-sdl.so ./libs/arm64-v8a/libcurl-sdl.so
+make: Leaving directory '/home/pulsex/commandergenius/project'
+make: Entering directory '/home/pulsex/commandergenius/project'
+[arm64-v8a] Install        : libexpat-sdl.so => libs/arm64-v8a/libexpat-sdl.so
+install -p ./obj/local/arm64-v8a/libexpat-sdl.so ./libs/arm64-v8a/libexpat-sdl.so
+make: Leaving directory '/home/pulsex/commandergenius/project'
+make: Entering directory '/home/pulsex/commandergenius/project'
+[arm64-v8a] Install        : liblzma.so => libs/arm64-v8a/liblzma.so
+install -p ./obj/local/arm64-v8a/liblzma.so ./libs/arm64-v8a/liblzma.so
+make: Leaving directory '/home/pulsex/commandergenius/project'
+make: Entering directory '/home/pulsex/commandergenius/project'
+[arm64-v8a] Install        : liblzo2.so => libs/arm64-v8a/liblzo2.so
+install -p ./obj/local/arm64-v8a/liblzo2.so ./libs/arm64-v8a/liblzo2.so
+make: Leaving directory '/home/pulsex/commandergenius/project'
+make: Entering directory '/home/pulsex/commandergenius/project'
+[arm64-v8a] Install        : libcrypto.so.sdl.1.so => libs/arm64-v8a/libcrypto.so.sdl.1.so
+install -p ./obj/local/arm64-v8a/libcrypto.so.sdl.1.so ./libs/arm64-v8a/libcrypto.so.sdl.1.so
+make: Leaving directory '/home/pulsex/commandergenius/project'
+make: Entering directory '/home/pulsex/commandergenius/project'
+[arm64-v8a] Install        : libssl.so.sdl.1.so => libs/arm64-v8a/libssl.so.sdl.1.so
+install -p ./obj/local/arm64-v8a/libssl.so.sdl.1.so ./libs/arm64-v8a/libssl.so.sdl.1.so
+make: Leaving directory '/home/pulsex/commandergenius/project'
+make: Entering directory '/home/pulsex/commandergenius/project'
+[armeabi-v7a] Install        : libsdl-1.2.so => libs/armeabi-v7a/libsdl-1.2.so
+install -p ./obj/local/armeabi-v7a/libsdl-1.2.so ./libs/armeabi-v7a/libsdl-1.2.so
+make: Leaving directory '/home/pulsex/commandergenius/project'
+make: Entering directory '/home/pulsex/commandergenius/project'
+[armeabi-v7a] Install        : libsdl_native_helpers.so => libs/armeabi-v7a/libsdl_native_helpers.so
+install -p ./obj/local/armeabi-v7a/libsdl_native_helpers.so ./libs/armeabi-v7a/libsdl_native_helpers.so
+make: Leaving directory '/home/pulsex/commandergenius/project'
+make: Entering directory '/home/pulsex/commandergenius/project'
+[armeabi-v7a] Install        : libtimidity.so => libs/armeabi-v7a/libtimidity.so
+install -p ./obj/local/armeabi-v7a/libtimidity.so ./libs/armeabi-v7a/libtimidity.so
+make: Leaving directory '/home/pulsex/commandergenius/project'
+make: Entering directory '/home/pulsex/commandergenius/project'
+[armeabi-v7a] Install        : libcurl-sdl.so => libs/armeabi-v7a/libcurl-sdl.so
+install -p ./obj/local/armeabi-v7a/libcurl-sdl.so ./libs/armeabi-v7a/libcurl-sdl.so
+make: Leaving directory '/home/pulsex/commandergenius/project'
+make: Entering directory '/home/pulsex/commandergenius/project'
+[armeabi-v7a] Install        : liblzma.so => libs/armeabi-v7a/liblzma.so
+install -p ./obj/local/armeabi-v7a/liblzma.so ./libs/armeabi-v7a/liblzma.so
+make: Leaving directory '/home/pulsex/commandergenius/project'
+make: Entering directory '/home/pulsex/commandergenius/project'
+[armeabi-v7a] Install        : libexpat-sdl.so => libs/armeabi-v7a/libexpat-sdl.so
+install -p ./obj/local/armeabi-v7a/libexpat-sdl.so ./libs/armeabi-v7a/libexpat-sdl.so
+make: Leaving directory '/home/pulsex/commandergenius/project'
+make: Entering directory '/home/pulsex/commandergenius/project'
+[armeabi-v7a] Install        : liblzo2.so => libs/armeabi-v7a/liblzo2.so
+install -p ./obj/local/armeabi-v7a/liblzo2.so ./libs/armeabi-v7a/liblzo2.so
+make: Leaving directory '/home/pulsex/commandergenius/project'
+make: Entering directory '/home/pulsex/commandergenius/project'
+[armeabi-v7a] Install        : libcrypto.so.sdl.1.so => libs/armeabi-v7a/libcrypto.so.sdl.1.so
+install -p ./obj/local/armeabi-v7a/libcrypto.so.sdl.1.so ./libs/armeabi-v7a/libcrypto.so.sdl.1.so
+make: Leaving directory '/home/pulsex/commandergenius/project'
+make: Entering directory '/home/pulsex/commandergenius/project'
+[armeabi-v7a] Install        : libssl.so.sdl.1.so => libs/armeabi-v7a/libssl.so.sdl.1.so
+install -p ./obj/local/armeabi-v7a/libssl.so.sdl.1.so ./libs/armeabi-v7a/libssl.so.sdl.1.so
+make: Leaving directory '/home/pulsex/commandergenius/project'
+make: Entering directory '/home/pulsex/commandergenius/project'
+[x86] Install        : libsdl-1.2.so => libs/x86/libsdl-1.2.so
+install -p ./obj/local/x86/libsdl-1.2.so ./libs/x86/libsdl-1.2.so
+make: Leaving directory '/home/pulsex/commandergenius/project'
+make: Entering directory '/home/pulsex/commandergenius/project'
+[x86] Install        : libsdl_native_helpers.so => libs/x86/libsdl_native_helpers.so
+install -p ./obj/local/x86/libsdl_native_helpers.so ./libs/x86/libsdl_native_helpers.so
+make: Leaving directory '/home/pulsex/commandergenius/project'
+make: Entering directory '/home/pulsex/commandergenius/project'
+[x86] Install        : libcurl-sdl.so => libs/x86/libcurl-sdl.so
+install -p ./obj/local/x86/libcurl-sdl.so ./libs/x86/libcurl-sdl.so
+make: Leaving directory '/home/pulsex/commandergenius/project'
+make: Entering directory '/home/pulsex/commandergenius/project'
+[x86] Install        : libtimidity.so => libs/x86/libtimidity.so
+install -p ./obj/local/x86/libtimidity.so ./libs/x86/libtimidity.so
+make: Leaving directory '/home/pulsex/commandergenius/project'
+make: Entering directory '/home/pulsex/commandergenius/project'
+[x86] Install        : libexpat-sdl.so => libs/x86/libexpat-sdl.so
+install -p ./obj/local/x86/libexpat-sdl.so ./libs/x86/libexpat-sdl.so
+make: Leaving directory '/home/pulsex/commandergenius/project'
+make: Entering directory '/home/pulsex/commandergenius/project'
+[x86] Install        : liblzo2.so => libs/x86/liblzo2.so
+install -p ./obj/local/x86/liblzo2.so ./libs/x86/liblzo2.so
+make: Leaving directory '/home/pulsex/commandergenius/project'
+make: Entering directory '/home/pulsex/commandergenius/project'
+[x86] Install        : liblzma.so => libs/x86/liblzma.so
+install -p ./obj/local/x86/liblzma.so ./libs/x86/liblzma.so
+make: Leaving directory '/home/pulsex/commandergenius/project'
+make: Entering directory '/home/pulsex/commandergenius/project'
+[x86] Install        : libcrypto.so.sdl.1.so => libs/x86/libcrypto.so.sdl.1.so
+install -p ./obj/local/x86/libcrypto.so.sdl.1.so ./libs/x86/libcrypto.so.sdl.1.so
+make: Leaving directory '/home/pulsex/commandergenius/project'
+make: Entering directory '/home/pulsex/commandergenius/project'
+[x86] Install        : libssl.so.sdl.1.so => libs/x86/libssl.so.sdl.1.so
+install -p ./obj/local/x86/libssl.so.sdl.1.so ./libs/x86/libssl.so.sdl.1.so
+make: Leaving directory '/home/pulsex/commandergenius/project'
+make: Entering directory '/home/pulsex/commandergenius/project'
+[x86_64] Install        : libsdl-1.2.so => libs/x86_64/libsdl-1.2.so
+install -p ./obj/local/x86_64/libsdl-1.2.so ./libs/x86_64/libsdl-1.2.so
+make: Leaving directory '/home/pulsex/commandergenius/project'
+make: Entering directory '/home/pulsex/commandergenius/project'
+[x86_64] Install        : libsdl_native_helpers.so => libs/x86_64/libsdl_native_helpers.so
+install -p ./obj/local/x86_64/libsdl_native_helpers.so ./libs/x86_64/libsdl_native_helpers.so
+make: Leaving directory '/home/pulsex/commandergenius/project'
+make: Entering directory '/home/pulsex/commandergenius/project'
+[x86_64] Install        : libtimidity.so => libs/x86_64/libtimidity.so
+install -p ./obj/local/x86_64/libtimidity.so ./libs/x86_64/libtimidity.so
+make: Leaving directory '/home/pulsex/commandergenius/project'
+make: Entering directory '/home/pulsex/commandergenius/project'
+[x86_64] Install        : libcurl-sdl.so => libs/x86_64/libcurl-sdl.so
+install -p ./obj/local/x86_64/libcurl-sdl.so ./libs/x86_64/libcurl-sdl.so
+make: Leaving directory '/home/pulsex/commandergenius/project'
+make: Entering directory '/home/pulsex/commandergenius/project'
+[x86_64] Install        : libexpat-sdl.so => libs/x86_64/libexpat-sdl.so
+install -p ./obj/local/x86_64/libexpat-sdl.so ./libs/x86_64/libexpat-sdl.so
+make: Leaving directory '/home/pulsex/commandergenius/project'
+make: Entering directory '/home/pulsex/commandergenius/project'
+[x86_64] Install        : liblzma.so => libs/x86_64/liblzma.so
+install -p ./obj/local/x86_64/liblzma.so ./libs/x86_64/liblzma.so
+make: Leaving directory '/home/pulsex/commandergenius/project'
+make: Entering directory '/home/pulsex/commandergenius/project'
+[x86_64] Install        : liblzo2.so => libs/x86_64/liblzo2.so
+install -p ./obj/local/x86_64/liblzo2.so ./libs/x86_64/liblzo2.so
+make: Leaving directory '/home/pulsex/commandergenius/project'
+make: Entering directory '/home/pulsex/commandergenius/project'
+[x86_64] Install        : libcrypto.so.sdl.1.so => libs/x86_64/libcrypto.so.sdl.1.so
+install -p ./obj/local/x86_64/libcrypto.so.sdl.1.so ./libs/x86_64/libcrypto.so.sdl.1.so
+make: Leaving directory '/home/pulsex/commandergenius/project'
+make: Entering directory '/home/pulsex/commandergenius/project'
+[x86_64] Install        : libssl.so.sdl.1.so => libs/x86_64/libssl.so.sdl.1.so
+install -p ./obj/local/x86_64/libssl.so.sdl.1.so ./libs/x86_64/libssl.so.sdl.1.so
+make: Leaving directory '/home/pulsex/commandergenius/project'
+make: Entering directory '/home/pulsex/commandergenius/project/jni/application'
+cd openttd && ./AndroidBuild.sh arm64-v8a aarch64-linux-android
+-- The C compiler identification is Clang 18.0.3
+-- The CXX compiler identification is Clang 18.0.3
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Check for working C compiler: /opt/android-ndk/toolchains/llvm/prebuilt/linux-x86_64/bin/clang - skipped
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Check for working CXX compiler: /opt/android-ndk/toolchains/llvm/prebuilt/linux-x86_64/bin/clang++ - skipped
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- Detecting Personal Data directory - .openttd
+-- Detecting Shared Data directory - (not set)
+-- Found Doxygen: /usr/sbin/doxygen (found version "1.16.1") found components: doxygen dot
+-- Performing Test CMAKE_HAVE_LIBC_PTHREAD
+-- Performing Test CMAKE_HAVE_LIBC_PTHREAD - Failed
+-- Looking for pthread_create in pthreads
+-- Looking for pthread_create in pthreads - not found
+-- Looking for pthread_create in pthread
+-- Looking for pthread_create in pthread - not found
+-- Check if compiler accepts -pthread
+-- Check if compiler accepts -pthread - yes
+-- Found Threads: TRUE
+-- Found ZLIB: /opt/android-ndk/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/lib/aarch64-linux-android/24/libz.so (found version "1.3.0.1")
+-- Could NOT find LibLZMA (missing: LIBLZMA_LIBRARY LIBLZMA_INCLUDE_DIR LIBLZMA_HAS_AUTO_DECODER LIBLZMA_HAS_EASY_ENCODER LIBLZMA_HAS_LZMA_PRESET) 
+-- Could NOT find LZO (missing: LZO_LIBRARY LZO_INCLUDE_DIR) (found version "2.10")
+-- Could NOT find ZSTD (missing: ZSTD_LIBRARY ZSTD_INCLUDE_DIR) (found suitable version "1.5.7", minimum required is "1.4")
+-- Could NOT find PNG (missing: PNG_LIBRARY PNG_PNG_INCLUDE_DIR) 
+-- Could NOT find CURL (missing: CURL_LIBRARY CURL_INCLUDE_DIR) 
+-- Could NOT find Allegro (missing: Allegro_LIBRARY Allegro_INCLUDE_DIR) 
+-- Could NOT find Freetype (missing: FREETYPE_LIBRARY FREETYPE_INCLUDE_DIRS) 
+-- Could NOT find Fluidsynth (missing: Fluidsynth_LIBRARY Fluidsynth_INCLUDE_DIR) 
+-- Could NOT find Harfbuzz (missing: Harfbuzz_LIBRARY Harfbuzz_INCLUDE_DIR) (found version "2.8.2")
+-- Found ICU: TRUE (found version "62.1") found components: i18n uc
+-- Could NOT find OpusFile (missing: OpusFile_LIBRARY OpusFile_INCLUDE_PATH) 
+-- Could NOT find Ogg (missing: Ogg_LIBRARY Ogg_INCLUDE_PATH) 
+-- Could NOT find Opus (missing: Opus_LIBRARY Opus_INCLUDE_PATH) 
+-- Could NOT find OpenGL (missing: OPENGL_opengl_LIBRARY OPENGL_INCLUDE_DIR OpenGL) 
+-- Performing Test BITMATH_BUILTINS_FOUND
+-- Performing Test BITMATH_BUILTINS_FOUND - Success
+-- Performing Test OVERFLOW_BUILTINS_FOUND
+-- Performing Test OVERFLOW_BUILTINS_FOUND - Success
+-- Performing Test DL_FOUND
+-- Performing Test DL_FOUND - Success
+-- Performing Test DL_FOUND2
+-- Performing Test DL_FOUND2 - Failed
+-- Performing Test DEMANGLE_FOUND
+-- Performing Test DEMANGLE_FOUND - Success
+-- Performing Test SIGACTION_FOUND
+-- Performing Test SIGACTION_FOUND - Success
+-- Performing Test SIGALTSTACK_FOUND
+-- Performing Test SIGALTSTACK_FOUND - Success
+-- Performing Test DBG_GDB_FOUND
+-- Performing Test DBG_GDB_FOUND - Success
+-- Performing Test PRCTL_PT_FOUND
+-- Performing Test PRCTL_PT_FOUND - Success
+-- Performing Test UCONTEXT_FOUND
+-- Performing Test UCONTEXT_FOUND - Failed
+-- Performing Test BFD_FOUND_A0
+-- Performing Test BFD_FOUND_A0 - Failed
+-- Performing Test BFD_FOUND_A1
+-- Performing Test BFD_FOUND_A1 - Failed
+-- Performing Test BFD_FOUND_B0
+-- Performing Test BFD_FOUND_B0 - Failed
+-- Performing Test BFD_FOUND_B1
+-- Performing Test BFD_FOUND_B1 - Failed
+-- Performing Test BFD_FOUND_C0
+-- Performing Test BFD_FOUND_C0 - Failed
+-- Performing Test BFD_FOUND_C1
+-- Performing Test BFD_FOUND_C1 - Failed
+-- Could not find Fcitx (Fcitx is OPTIONAL)
+-- Performing Test SSE_FOUND
+-- Performing Test SSE_FOUND - Failed
+-- Could NOT find Grfcodec (missing: GRFCODEC_EXECUTABLE GRFID_EXECUTABLE NFORENUM_EXECUTABLE) 
+-- Option Package Dependencies - OFF
+-- Option Dedicated - OFF
+-- Option Install FHS - ON
+-- Option Use assert - ON
+-- Option Use NSIS - OFF
+-- Option Survey Key - NOT USED
+-- Configuring incomplete, errors occurred!
+make: Leaving directory '/home/pulsex/commandergenius/project/jni/application'
