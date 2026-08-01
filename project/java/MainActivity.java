@@ -505,7 +505,7 @@ public class MainActivity extends Activity
 			_videoLayout.addView(mGLView, new FrameLayout.LayoutParams(FrameLayout.LayoutParams.MATCH_PARENT, FrameLayout.LayoutParams.MATCH_PARENT));
 		}
 		mGLView.captureMouse(true);
-		// On-screen Ctrl/Shift modifier buttons - right edge, vertically centered
+		// On-screen Ctrl/Shift/Alt + keyboard buttons - right edge, vertically centered
 		ModifierKeysOverlay modifierKeysOverlay = new ModifierKeysOverlay(this);
 		FrameLayout.LayoutParams overlayParams = new FrameLayout.LayoutParams(
 				FrameLayout.LayoutParams.WRAP_CONTENT, FrameLayout.LayoutParams.WRAP_CONTENT,

@@ -8,62 +8,65 @@ import android.widget.Button;
 import android.widget.LinearLayout;
 
 /**
- * On-screen sticky modifier keys (Ctrl / Shift) for games that need keyboard
- * modifiers on devices without a physical keyboard.
+ * On-screen sticky modifier keys (Ctrl / Shift / Alt) plus a keyboard button
+ * for games that need keyboard input on devices without a physical keyboard.
  *
- * Click once = key held down (button highlighted), click again = released.
- * Key events are injected through DemoGLSurfaceView.nativeKey(), the same
- * JNI path used by the hardware keyboard, so no C or game code changes are
- * required. MainActivity attaches this overlay to the video layout with a
- * right-edge, vertically-centered LayoutParams.
+ * Modifier buttons: click once = key held down (button highlighted), click
+ * again = released. Key events are injected through DemoGLSurfaceView.nativeKey(),
+ * the same JNI path used by the hardware keyboard, so no C or game code changes
+ * are required. The keyboard button opens the Android soft keyboard, whose
+ * input reaches the game through the existing onKeyDown -> nativeKey forwarding.
+ * MainActivity attaches this overlay to the video layout with a right-edge,
+ * vertically-centered LayoutParams.
  */
 public class ModifierKeysOverlay extends LinearLayout
 {
 	private static final int KEYCODE_CTRL_LEFT = 113;
 	private static final int KEYCODE_SHIFT_LEFT = 59;
-
-	private boolean ctrlDown = false;
-	private boolean shiftDown = false;
-
-	private final Button ctrlButton;
-	private final Button shiftButton;
+	private static final int KEYCODE_ALT_LEFT = 57;
 
 	public ModifierKeysOverlay(Context context)
 	{
 		super(context);
 		setOrientation(VERTICAL);
 
-		ctrlButton = makeButton("Ctrl");
-		shiftButton = makeButton("Shift");
+		addModifierButton("Ctrl", KEYCODE_CTRL_LEFT);
+		addModifierButton("Shift", KEYCODE_SHIFT_LEFT);
+		addModifierButton("Alt", KEYCODE_ALT_LEFT);
 
-		ctrlButton.setOnClickListener(new OnClickListener() {
+		Button keyboardButton = makeButton("KEY");
+		keyboardButton.setOnClickListener(new OnClickListener() {
 			@Override
 			public void onClick(View v)
 			{
-				ctrlDown = !ctrlDown;
-				DemoGLSurfaceView.nativeKey(KEYCODE_CTRL_LEFT, ctrlDown ? 1 : 0, 0, 0);
-				updateStyle(ctrlButton, ctrlDown);
+				((MainActivity) getContext()).showScreenKeyboardWithoutTextInputField(Globals.TextInputKeyboard);
 			}
 		});
-		shiftButton.setOnClickListener(new OnClickListener() {
+		addView(keyboardButton);
+	}
+
+	private void addModifierButton(final String label, final int keyCode)
+	{
+		final Button b = makeButton(label);
+		b.setTag(Boolean.FALSE);
+		b.setOnClickListener(new OnClickListener() {
 			@Override
 			public void onClick(View v)
 			{
-				shiftDown = !shiftDown;
-				DemoGLSurfaceView.nativeKey(KEYCODE_SHIFT_LEFT, shiftDown ? 1 : 0, 0, 0);
-				updateStyle(shiftButton, shiftDown);
+				boolean down = !((Boolean) b.getTag());
+				b.setTag(down);
+				DemoGLSurfaceView.nativeKey(keyCode, down ? 1 : 0, 0, 0);
+				updateStyle(b, down);
 			}
 		});
-
-		addView(ctrlButton);
-		addView(shiftButton);
+		addView(b);
 	}
 
 	private Button makeButton(String label)
 	{
 		Button b = new Button(getContext());
 		b.setText(label);
-		b.setTextSize(11f);
+		b.setTextSize(10f);
 		b.setTypeface(Typeface.DEFAULT_BOLD);
 		// Do not steal keyboard focus from the game view
 		b.setFocusable(false);
@@ -71,8 +74,8 @@ public class ModifierKeysOverlay extends LinearLayout
 		b.setMinimumWidth(0);
 		b.setMinimumHeight(0);
 		b.setPadding(0, 0, 0, 0);
-		LayoutParams lp = new LayoutParams(dp(52), dp(38));
-		lp.topMargin = dp(8);
+		LayoutParams lp = new LayoutParams(dp(44), dp(30));
+		lp.topMargin = dp(6);
 		b.setLayoutParams(lp);
 		updateStyle(b, false);
 		return b;
