@@ -201,5 +201,10 @@
 
     <string name="notification_app_is_running">%s 正在运行中</string>
     <string name="notification_stop">停止</string>
+    <string name="data_dir_title">游戏数据目录</string>
+    <string name="data_dir_first_run_title">选择游戏数据目录</string>
+    <string name="data_dir_first_run_message">请选择一个目录来存储游戏数据（存档、NewGRF 等）。\n\n如果在此过程中应用崩溃，请重启游戏重试。</string>
+    <string name="data_dir_changed">游戏数据已移动到新目录</string>
+    <string name="data_dir_failed">无法使用所选目录，将使用默认目录</string>
 
 </resources>

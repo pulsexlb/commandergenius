@@ -27,6 +27,11 @@
     <string name="storage_commandline">Command line parameters, one argument per line</string>
     <string name="storage_question">Data installation location</string>
     <string name="storage_access">Permission to write to SD card</string>
+    <string name="data_dir_title">Game data directory</string>
+    <string name="data_dir_first_run_title">Choose game data directory</string>
+    <string name="data_dir_first_run_message">Please choose a directory to store the game data (saves, NewGRFs, etc).\n\nIf the app crashes during this setup, just restart it and try again.</string>
+    <string name="data_dir_changed">Game data moved to the new directory</string>
+    <string name="data_dir_failed">Cannot use the selected directory, using the default one</string>
     <string name="optional_downloads">Downloads</string>
     <string name="downloads">Downloads</string>
     <string name="ok">OK</string>

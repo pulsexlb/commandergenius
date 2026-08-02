@@ -33,6 +33,7 @@ import android.view.WindowManager;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+import android.widget.Toast;
 import android.widget.EditText;
 import android.text.Editable;
 import android.widget.Button;
@@ -123,8 +124,22 @@ public class MainActivity extends Activity
 
 		// We need to load Globals.DrawInDisplayCutout option to correctly set fullscreen mode, it can only be done from onCreate()
 		Settings.LoadConfig(this);
+		cloudSave = new CloudSave(this); // Initialized here so the lifecycle callbacks are safe even on the first-run data directory flow
 		DimSystemStatusBar.dim(null, getWindow());
 
+		if( DataDirPicker.needsFirstRunChoice(this) )
+		{
+			// First run: let the player pick the game data directory before starting the game
+			DataDirPicker.startFirstRun(this);
+		}
+		else
+		{
+			startup();
+		}
+	}
+
+	private void startup()
+	{
 		Log.i("SDL", "libSDL: Creating startup screen");
 		Display display = getWindowManager().getDefaultDisplay();
 		int height = display.getHeight();
@@ -300,7 +315,6 @@ public class MainActivity extends Activity
 			Intent intent = new Intent(this, DummyService.class);
 			startService(intent);
 		}
-		cloudSave = new CloudSave(this);
 		// Request SD card permission right during start, because game devs don't care about runtime permissions and stuff
 		try
 		{
@@ -320,6 +334,26 @@ public class MainActivity extends Activity
 			}
 		}
 		catch(Exception e) {}
+	}
+
+	void finishDataDirFirstRun(final boolean useUserDir)
+	{
+		if( !useUserDir )
+		{
+			// The player cancelled the directory picker or granted no access - remember the default
+			// directory so the question is not asked again on every start.
+			String def = Globals.DataDir;
+			if( def == null || def.length() == 0 )
+				def = Globals.DownloadToSdcard ? Settings.SdcardAppPath.get().bestPath(this) : getFilesDir().getAbsolutePath();
+			DataDirPicker.setUserDir(this, def);
+		}
+		startup();
+	}
+
+	void showDataDirConfig()
+	{
+		dataDirConfigFromMenu = true;
+		DataDirPicker.launchPicker(this);
 	}
 
 	public void setUpStatusLabel()
@@ -684,8 +718,19 @@ public class MainActivity extends Activity
 	@Override
 	public void onActivityResult(int request, int response, Intent data) {
 		super.onActivityResult(request, response, data);
-		cloudSave.onActivityResult(request, response, data);
+		if( cloudSave != null ) cloudSave.onActivityResult(request, response, data);
 		SettingsMenuMisc.StorageAccessConfig.onActivityResult(this, request, response, data);
+		if( request == DataDirPicker.REQ_PICK_DATA_DIR )
+		{
+			boolean fromMenu = dataDirConfigFromMenu;
+			dataDirConfigFromMenu = false;
+			DataDirPicker.onPicked(this, response, data, fromMenu);
+		}
+		if( request == DataDirPicker.REQ_ALL_FILES_ACCESS )
+		{
+			// Returned from the "All files access" settings page - only now check the permission
+			DataDirPicker.onAllFilesAccessResult(this);
+		}
 	}
 
 	private int TextInputKeyboardList[][] =
@@ -1542,6 +1587,7 @@ public class MainActivity extends Activity
 	public FrameLayout getVideoLayout() { return _videoLayout; }
 
 	DemoGLSurfaceView mGLView = null;
+	boolean dataDirConfigFromMenu = false; // Directory was picked from the settings menu, restart afterwards
 	private static AudioThread mAudioThread = null;
 	private static DataDownloader downloader = null;
 

@@ -240,6 +240,7 @@ class SettingsMenu
 			Menu options[] =
 			{
 				new SettingsMenuMisc.DownloadConfig(),
+				new SettingsMenuMisc.DataDirConfig(),
 				new SettingsMenuMisc.OptionalDownloadConfig(false),
 				new SettingsMenuKeyboard.KeyboardConfigMainMenu(),
 				new SettingsMenuMouse.MouseConfigMainMenu(),

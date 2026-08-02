@@ -459,7 +459,13 @@ public class Settings
 			DeleteSdlConfigOnUpgradeAndRestart(p);
 		}
 		
-		if( Globals.DataDir.length() == 0 )
+		String userDataDir = DataDirPicker.getUserDir(p);
+		if( userDataDir.length() > 0 && new File(userDataDir).isDirectory() )
+		{
+			// The player picked a custom game data directory on first run or in the settings menu
+			Globals.DataDir = userDataDir;
+		}
+		else if( Globals.DataDir.length() == 0 )
 		{
 			if( !Environment.getExternalStorageState().equals(Environment.MEDIA_MOUNTED) )
 			{

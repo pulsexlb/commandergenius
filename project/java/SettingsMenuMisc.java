@@ -165,6 +165,18 @@ class SettingsMenuMisc extends SettingsMenu
 		}
 	}
 
+	static class DataDirConfig extends Menu
+	{
+		String title(final MainActivity p)
+		{
+			return p.getResources().getString(R.string.data_dir_title);
+		}
+		void run (final MainActivity p)
+		{
+			p.showDataDirConfig();
+		}
+	}
+
 	static class OptionalDownloadConfig extends Menu
 	{
 		boolean firstStart = false;
