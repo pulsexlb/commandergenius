@@ -1,0 +1,88 @@
+name: openttd-release
+
+on:
+  # Trigger from the openttd repo when a new tag is pushed:
+  #   gh api repos/<owner>/<repo>/dispatches -f event_type=openttd-tag -f 'client_payload[tag]=jgrpp-0.74.0'
+  # requires a fine-grained PAT secret OPENTTD_DISPATCH_TOKEN in that repo
+  repository_dispatch:
+    types: [openttd-tag]
+  workflow_dispatch:
+    inputs:
+      OpenttdRef:
+        description: 'openttd tag to build and release, leave empty to auto-detect the newest upstream tag'
+        required: false
+        default: ''
+  schedule:
+    # Every day at 03:00 UTC: check for new tags in the openttd repo
+    - cron: '0 3 * * *'
+
+permissions:
+  contents: write
+
+env:
+  OPENTTD_REPO: pulsexlb/openttd-android
+
+jobs:
+  check-tag:
+    runs-on: ubuntu-latest
+    outputs:
+      tag: ${{ steps.detect.outputs.tag }}
+      build: ${{ steps.detect.outputs.build }}
+    steps:
+      - name: Detect target tag
+        id: detect
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          if [ -n "${{ inputs.OpenttdRef }}" ]; then
+            TAG="${{ inputs.OpenttdRef }}"
+          elif [ "${{ github.event_name }}" = "repository_dispatch" ]; then
+            TAG="${{ github.event.client_payload.tag }}"
+          else
+            # newest tag by version sort
+            TAG=`git ls-remote --tags https://github.com/${OPENTTD_REPO}.git \
+              | awk -F/ '{print $3}' | grep -v '\^{}' | sort -V | tail -1`
+          fi
+          if [ -z "$TAG" ]; then
+            echo "No tag found"; exit 1
+          fi
+          echo "Upstream tag: $TAG"
+          BUILD=true
+          # On scheduled runs skip if a release for this tag already exists
+          if [ "${{ github.event_name }}" = "schedule" ]; then
+            if gh release view "$TAG" -R "$GITHUB_REPOSITORY" > /dev/null 2>&1; then
+              echo "Release for $TAG already exists, skipping"
+              BUILD=false
+            fi
+          fi
+          echo "tag=$TAG" >> $GITHUB_OUTPUT
+          echo "build=$BUILD" >> $GITHUB_OUTPUT
+
+  build:
+    needs: check-tag
+    if: needs.check-tag.outputs.build == 'true'
+    uses: ./.github/workflows/openttd.yml
+    with:
+      OpenttdRef: ${{ needs.check-tag.outputs.tag }}
+      AppVersionName: ${{ needs.check-tag.outputs.tag }}
+      AppVersionCode: ${{ github.run_number }}
+    secrets: inherit
+
+  release:
+    needs: [check-tag, build]
+    runs-on: ubuntu-latest
+    steps:
+      - name: Download build artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: openttd
+          path: upload
+
+      - name: Create release
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: ${{ needs.check-tag.outputs.tag }}
+          name: ${{ needs.check-tag.outputs.tag }}
+          files: upload/*
+          generate_release_notes: true
+          fail_on_unmatched_files: true
